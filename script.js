@@ -134,7 +134,7 @@ contactForm.addEventListener('submit', async (e) => {
         const whatsappUrl = `https://wa.me/573003611103?text=${encodeURIComponent(whatsappMessage)}`;
         
         // Open email client
-        window.open(mailtoUrl, '_blank');
+       //window.open(mailtoUrl, '_blank');
         
         // Small delay before opening WhatsApp
         setTimeout(() => {
@@ -345,7 +345,7 @@ function setDailyColor() {
 
 // Function to update logos based on daily color
 function updateDailyLogos(colorName) {
-    const logoPath = `logo-${colorName}.svg`;
+    const logoPath = `/assets/logo-${colorName}.svg`;
     
     // Update navigation logo
     const navLogo = document.querySelector('.nav-brand img');
