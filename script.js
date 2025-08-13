@@ -345,7 +345,7 @@ function setDailyColor() {
 
 // Function to update logos based on daily color
 function updateDailyLogos(colorName) {
-    const logoPath = `/assets/logo-${colorName}.svg`;
+    const logoPath = `logo-${colorName}.svg`;
     
     // Update navigation logo
     const navLogo = document.querySelector('.nav-brand img');
