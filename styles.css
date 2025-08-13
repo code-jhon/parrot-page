@@ -588,6 +588,26 @@ section {
     color: var(--daily-color);
 }
 
+.contact-method a {
+    color: var(--daily-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.contact-method a:hover {
+    color: var(--daily-color-dark);
+    border-bottom: 1px solid var(--daily-color);
+    transform: translateY(-1px);
+}
+
+.contact-method a:focus {
+    outline: 2px solid var(--daily-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
 .contact-form {
     background: var(--white);
     padding: 2rem;

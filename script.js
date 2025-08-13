@@ -112,16 +112,37 @@ contactForm.addEventListener('submit', async (e) => {
     const submitButton = contactForm.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     
+    // Get form values
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+    
     // Show loading state
     submitButton.textContent = 'Sending...';
     submitButton.disabled = true;
     
     try {
-        // Simulate form submission (replace with actual endpoint)
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // Create email content
+        const emailSubject = `Contact Form Submission from ${name}`;
+        const emailBody = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        // Create mailto URL
+        const mailtoUrl = `mailto:contact@parrot-apps.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        
+        // Create WhatsApp message
+        const whatsappMessage = `Hi! I'm ${name}.\n\nEmail: ${email}\n\nMessage: ${message}`;
+        const whatsappUrl = `https://wa.me/573003611103?text=${encodeURIComponent(whatsappMessage)}`;
+        
+        // Open email client
+        window.open(mailtoUrl, '_blank');
+        
+        // Small delay before opening WhatsApp
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 500);
         
         // Show success message
-        showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
+        showNotification('Opening email client and WhatsApp. We\'ll get back to you soon!', 'success');
         contactForm.reset();
     } catch (error) {
         // Show error message
