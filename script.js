@@ -131,7 +131,7 @@ contactForm.addEventListener('submit', async (e) => {
         
         // Create WhatsApp message
         const whatsappMessage = `Hi! I'm ${name}.\n\nEmail: ${email}\n\nMessage: ${message}`;
-        const whatsappUrl = `https://wa.me/573003611103?text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappUrl = `https://wa.me/573002685861?text=${encodeURIComponent(whatsappMessage)}`;
         
         // Open email client
        //window.open(mailtoUrl, '_blank');
